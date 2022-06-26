@@ -1,0 +1,121 @@
+@import url("a11yreset.css");
+@import url("utilitary.css");
+
+:root {
+  --stripe-height: 0.2rem;
+}
+
+body {
+  overflow-y: hidden;
+}
+
+@font-face {
+  font-family: "Source Code Pro";
+  src: url("/fonts/SourceCodePro-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes stripe-motion {
+  0% { background-position: 0% 0; }
+  100% { background-position: 100% 0; }
+}
+
+@keyframes stripe-slide-in {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(0.4rem);
+  }
+}
+
+@layer components {
+  .btn-primary {
+    display: block;
+    text-transform: uppercase;
+    padding: theme('spacing.2');
+    color: theme('colors.gray.100');
+    border-radius: theme('borderRadius.sm');
+    background: theme('colors.gray.900');
+
+    position: relative;
+  }
+
+  .btn-primary:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+
+    border-radius: inherit;
+
+    height: theme('spacing.2');
+
+    background: theme('backgroundColor.gray.900');
+
+    @apply transition;
+  }
+
+  .btn-primary:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+
+    border-radius: inherit;
+    border-width: 1px;
+    border-color: theme('borderColor.gray.900');
+
+    height: theme('spacing.2');
+    background-image: repeating-linear-gradient(
+      -40deg,
+      theme('colors.gray.900'),
+      theme('colors.gray.900') 1px,
+      theme('colors.gray.100') 2px,
+      theme('colors.gray.100') 5px
+    );
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    background-size: theme('spacing.2') theme('spacing.2');
+
+    @apply transition;
+  }
+
+  .btn-primary:hover:after {
+    animation: 
+      stripe-motion 12s infinite linear 0.15s forwards,
+      stripe-slide-in 0.15s linear forwards;
+  }
+
+  .btn-primary:hover:before {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .btn-secondary {
+    border: 2px solid theme('colors.gray.900');
+    color: theme('colors.gray.900');
+    padding: theme('spacing.2');
+    text-transform: uppercase;
+    border-radius: theme('borderRadius.sm');
+    background: theme('colors.gray.50');
+    height: theme('spacing.10')
+    
+    @apply transition;
+  }
+
+  .btn-secondary:disabled {
+    background: theme('colors.gray.400');
+    cursor: not-allowed;
+  }
+}

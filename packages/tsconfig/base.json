@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Base",
+  "exclude": ["node_modules", ".turbo"],
+  "compilerOptions": {
+    "strict": true,
+    "module": "esnext",
+    "target": "es2019",
+    "esModuleInterop": true,
+    "noEmit": true
+  }
+}

@@ -1,0 +1,16 @@
+{
+  // eslint
+  "eslint.format.enable": true,
+  "eslint.packageManager": "yarn",
+  "eslint.alwaysShowStatus": true,
+  "eslint.lintTask.enable": true,
+  "eslint.validate": [
+    "typescript",
+    "typescriptreact"
+  ],
+  // editor
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+}

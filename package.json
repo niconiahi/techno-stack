@@ -1,0 +1,34 @@
+{
+  "name": "niconiahi.dev",
+  "version": "0.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "commit": "npx cz",
+    "build": "turbo run build",
+    "deploy": "turbo run deploy",
+    "clean": "turbo run clean && rm -rf node_modules",
+    "clean:deep": "turbo run clean && rm -rf node_modules && rm yarn.lock",
+    "dev": "turbo run dev --parallel",
+    "lint": "turbo run lint",
+    "format": "turbo run format",
+    "test": "turbo run test",
+    "test:coverage": "turbo run test:coverage"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^16.2.3",
+    "@commitlint/config-conventional": "^16.2.1",
+    "commitizen": "^4.2.4",
+    "cz-conventional-changelog": "^3.3.0",
+    "prettier": "^2.6.2",
+    "turbo": "latest"
+  },
+  "engines": {
+    "npm": ">=7.0.0",
+    "node": ">=14.0.0"
+  },
+  "packageManager": "yarn@3.1.0"
+}

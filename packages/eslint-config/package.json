@@ -1,0 +1,22 @@
+{
+  "name": "@niconiahi/eslint-config",
+  "version": "0.0.1",
+  "license": "MIT",
+  "files": [
+    "web.js",
+    "node.js"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "clean": "rm -rf .turbo && rm -rf node_modules"
+  },
+  "dependencies": {
+    "@remix-run/eslint-config": "^1.4.3",
+    "eslint": "^8.14.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.0.0"
+  }
+}

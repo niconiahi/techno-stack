@@ -1,0 +1,21 @@
+{
+  "name": "@niconiahi/etl",
+  "version": "1.0.0",
+  "description": "The transforming layer for supported contract's events",
+  "main": "index.js",
+  "author": "Nicolas Accetta",
+  "license": "MIT",
+  "scripts": {
+    "clean": "rm -rf .turbo && rm -rf node_modules"
+  },
+  "dependencies": {
+    "ethers": "^5.6.4",
+    "node-cron": "^2.0.3",
+    "pm2": "^4.5.1"
+  },
+  "devDependencies": {
+    "@niconiahi/eslint-config": "*",
+    "@niconiahi/tsconfig": "*",
+    "@types/node-cron": "^3.0.1"
+  }
+}
